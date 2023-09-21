@@ -1,8 +1,10 @@
 html {
     font-size: 62.5%;
+    height: 100%;
 }
 
 body {
+    height: 100%;
     background-color: #F2F2F2;
     font-size: 1.5rem;
     font-family: Arial, Helvetica, sans-serif;
@@ -12,13 +14,54 @@ h1 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
     font-weight: 700;
+    text-align: center;
 }
 
 .wrapper {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+.page-body {
+    padding: 1.5rem;
+}
+
+article {
+    box-sizing: border-box;
     background-color: #FFFFFF;
     border-radius: 0.5rem;
-    box-shadow: 0 0.2rem 0.7rem rgba(0, 0, 0, 0.12);
-    margin: 1rem auto;
+    box-shadow: 0 0.2rem 0.9rem rgba(0, 0, 0, 0.12);
+    margin: 0 auto;
     padding: 3rem;
+    width: 100%;
     max-width: 120rem;
+}
+
+.authors {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    font-size: 1.3rem;
+    text-align: center;
+    color: #666666;
+    background-color: #dddddd;
+}
+
+@media screen and (max-width: 500px) {
+    .page-body {
+        padding: 0;
+    }
+
+    article {
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
 }
