@@ -17,6 +17,17 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+p {
+    margin-bottom: 2rem;
+}
+
 .wrapper {
     min-height: 100%;
     display: grid;
@@ -43,6 +54,23 @@ article {
     margin-bottom: 3rem;
 }
 
+.video-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+video {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 80rem;
+}
+
+.caption {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
 footer {
     display: flex;
     justify-content: center;
@@ -52,6 +80,10 @@ footer {
     text-align: center;
     color: #666666;
     background-color: #dddddd;
+}
+
+footer>p {
+    margin: 0;
 }
 
 @media screen and (max-width: 500px) {
