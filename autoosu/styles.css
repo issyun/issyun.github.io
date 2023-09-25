@@ -51,7 +51,40 @@ article {
 
 .authors {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.links > a:first-child {
+    margin-right: 2.5rem;
+}
+
+.float-parent {
+    width: 100%;
+    float: left;
+    margin-bottom: 2rem;
+}
+
+.float-left {
+    float: left;
+    width: 100%;
+    max-width: 18rem;
+    margin: 0 1rem 0 0;
+}
+
+p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    
+}
+
+em {
+    font-style: italic;
 }
 
 .video-container {
@@ -96,5 +129,15 @@ footer>p {
         margin: 0;
         border-radius: 0;
         box-shadow: none;
+    }
+
+    .authors {
+        margin-bottom: 1.5rem;
+    }
+
+    .float-left {
+        float: none;
+        display: block;
+        margin: 0 auto 1rem auto;
     }
 }

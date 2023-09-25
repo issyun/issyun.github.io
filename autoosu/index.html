@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="styles.css" />
-    <title>AutoOsu</title>
+    <title>AutoOsu Demo</title>
   </head>
   <body>
     <div class="wrapper">
@@ -13,7 +13,18 @@
         <article>
           <h1>AutoOsu: Audio-Aware Action Generation for Rhythm Games</h1>
           <p class="authors">Sihun Lee, Dasaem Jeong</p>
-          <p>[This demo page is under construction.]</p>
+          <div class="links">
+            <a href="https://github.com/issyun/AutoOsu">GitHub</a>
+            <a href="#">Extended Abstract</a>
+          </div>
+          
+          <section class="float-parent">
+            <img class="float-left" src="img/autoosu-logo.png">
+            <p>AutoOsu is a CRNN-based model for generating <em>beatmaps</em> for <em><a href="https://osu.ppy.sh/wiki/en/Game_mode/osu!mania">osu! mania</a></em>. It has an architecture similar to that of automatic music translation models, and was trained on 1,126 public beatmaps collected from the game's official website.</p>
+            <p>During inference, an audio file, tempo and offset values, and an intended star rating(difficulty) must be provided. The inference code outputs an .osz file, which can be put directly into the game. As of now, AutoOsu can only be used with songs in a time signiture of 4/4, and with consistent tempo.</p>
+            <p>We find some inconsistencies in the note density of generated charts, which seems to be most affected by the first few seconds of the input audio track. We plan to fix this issue using a different training method. We also plan to experiment with machine learning-based beat tracking methods to fully automate inference. Some gameplay examples of generated charts are presented below.</p>
+          </section>
+
           <h2>Inference Examples</h2>
           <div class="video-container">
             <video controls>
