@@ -43,6 +43,12 @@ article {
     margin-bottom: 3rem;
 }
 
+.float-left {
+    float: left;
+    width: 100%;
+    max-width: 15rem;
+}
+
 footer {
     display: flex;
     justify-content: center;
