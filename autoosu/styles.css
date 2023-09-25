@@ -60,8 +60,12 @@ article {
     margin-bottom: 2rem;
 }
 
-.links > a:first-child {
+.links > a {
     margin-right: 2.5rem;
+}
+
+.links > a:last-child {
+    margin-right: 0;
 }
 
 .float-parent {
