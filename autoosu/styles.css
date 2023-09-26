@@ -91,6 +91,12 @@ em {
     font-style: italic;
 }
 
+.float-left {
+    float: left;
+    width: 100%;
+    max-width: 15rem;
+}
+
 .video-container {
     display: flex;
     width: 100%;
