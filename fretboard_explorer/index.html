@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width minimum-scale=1.0">
+        <meta charset="UTF-8" />
+        <meta name="description" content="Learn the fretboard">
+        <link href="styles/reset.css" rel="stylesheet">
+        <link href="styles/style.css" rel="stylesheet">
+        <link href="styles/fretboard.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+        <title>Fretboard Explorer</title>
+        <script src="fretboard.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <div class="fretboard-header-wrapper">
+                <div class="fretboard-header">
+                    <h1>Fretboard Explorer</h1>
+                </div>
+            </div>
+        </header>
+        <div class="fretboard-page-wrapper">
+            <div class="fretboard-app-wrapper">
+                <div class="fretboard-top-ui-wrapper">
+                    <button id="fretboard-tuning" class="fretboard-button noSpacing">Tuning</button>
+                    <div class="toggle-button-group">
+                        <button class="toggle-button toggle-button-selected" id="toggle-sharp">♯</button>
+                        <button class="toggle-button" id="toggle-flat">♭</button>
+                    </div>
+                </div>
+                <div class="fretboard-wrapper">
+                    <div class="fretboard-open-strings">
+                        <div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret6-0">E</span></div>
+                        <div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret5-0">B</span></div>
+                        <div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret4-0">G</span></div>
+                        <div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret3-0">D</span></div>
+                        <div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret2-0">A</span></div>
+                        <div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret1-0">E</span></div>
+                    </div>
+                    <div class="fretboard">
+                        <div class="fretboard-inlays">
+                            <div style="grid-column: 3" class="fretboard-inlay-wrapper">
+                                <span class="fretboard-inlay">●</span>
+                            </div>
+                            <div style="grid-column: 5" class="fretboard-inlay-wrapper">
+                                <span class="fretboard-inlay">●</span>
+                            </div>
+                            <div style="grid-column: 7" class="fretboard-inlay-wrapper">
+                                <span class="fretboard-inlay">●</span>
+                            </div>
+                            <div style="grid-column: 9" class="fretboard-inlay-wrapper">
+                                <span class="fretboard-inlay">●</span>
+                            </div>
+                            <div style="grid-column: 12" class="fretboard-inlay-wrapper">
+                                <span class="fretboard-inlay">●</span>
+                                <span class="fretboard-inlay">●</span>
+                            </div>
+                            <div style="grid-column: 15" class="fretboard-inlay-wrapper">
+                                <span class="fretboard-inlay">●</span>
+                            </div>
+                            <div style="grid-column: 17" class="fretboard-inlay-wrapper">
+                                <span class="fretboard-inlay">●</span>
+                            </div>
+                            <div style="grid-column: 19" class="fretboard-inlay-wrapper">
+                                <span class="fretboard-inlay">●</span>
+                            </div>
+                            <div style="grid-column: 21" class="fretboard-inlay-wrapper">
+                                <span class="fretboard-inlay">●</span>
+                            </div>
+                        </div>
+                        <div class="fretboard-strings">
+                            <div class="fretboard-string"></div>
+                            <div class="fretboard-string"></div>
+                            <div class="fretboard-string"></div>
+                            <div class="fretboard-string"></div>
+                            <div class="fretboard-string"></div>
+                            <div class="fretboard-string"></div>
+                        </div>
+                        <div class="fretboard-row" id="string6">
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret6-1"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret6-2"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret6-3"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret6-4"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret6-5"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret6-6"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret6-7"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret6-8"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret6-9"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret6-10"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret6-11"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret6-12"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret6-13"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret6-14"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret6-15"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret6-16"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret6-17"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret6-18"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret6-19"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret6-20"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret6-21"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret6-22"></span></div></div>
+                        </div>
+                        <div class="fretboard-row" id="string5">
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret5-1"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret5-2"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret5-3"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret5-4"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret5-5"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret5-6"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret5-7"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret5-8"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret5-9"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret5-10"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret5-11"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret5-12"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret5-13"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret5-14"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret5-15"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret5-16"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret5-17"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret5-18"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret5-19"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret5-20"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret5-21"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret5-22"></span></div></div>
+                        </div>
+                        <div class="fretboard-row" id="string4">
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret4-1"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret4-2"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret4-3"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret4-4"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret4-5"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret4-6"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret4-7"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret4-8"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret4-9"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret4-10"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret4-11"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret4-12"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret4-13"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret4-14"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret4-15"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret4-16"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret4-17"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret4-18"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret4-19"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret4-20"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret4-21"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret4-22"></span></div></div>
+                        </div>
+                        <div class="fretboard-row" id="string3">
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret3-1"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret3-2"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret3-3"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret3-4"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret3-5"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret3-6"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret3-7"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret3-8"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret3-9"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret3-10"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret3-11"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret3-12"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret3-13"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret3-14"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret3-15"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret3-16"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret3-17"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret3-18"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret3-19"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret3-20"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret3-21"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret3-22"></span></div></div>
+                        </div>
+                        <div class="fretboard-row" id="string2">
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret2-1"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret2-2"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret2-3"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret2-4"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret2-5"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret2-6"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret2-7"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret2-8"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret2-9"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret2-10"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret2-11"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret2-12"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret2-13"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret2-14"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret2-15"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret2-16"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret2-17"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret2-18"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret2-19"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret2-20"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret2-21"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret2-22"></span></div></div>
+                        </div>
+                        <div class="fretboard-row" id="string1">
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret1-1"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret1-2"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret1-3"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret1-4"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret1-5"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret1-6"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret1-7"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret1-8"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret1-9"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret1-10"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret1-11"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret1-12"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret1-13"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret1-14"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret1-15"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret1-16"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret1-17"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret1-18"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret1-19"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret1-20"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret1-21"></span></div></div>
+                            <div class="fretboard-fret"><div class="fretboard-note-wrapper"><span class="fretboard-note" id="fret1-22"></span></div></div>
+                        </div>
+                    </div>
+                    <div class="fretboard-numbers">
+                        <p class="fretboard-number">1</p>
+                        <p class="fretboard-number">2</p>
+                        <p class="fretboard-number">3</p>
+                        <p class="fretboard-number">4</p>
+                        <p class="fretboard-number">5</p>
+                        <p class="fretboard-number">6</p>
+                        <p class="fretboard-number">7</p>
+                        <p class="fretboard-number">8</p>
+                        <p class="fretboard-number">9</p>
+                        <p class="fretboard-number">10</p>
+                        <p class="fretboard-number">11</p>
+                        <p class="fretboard-number">12</p>
+                        <p class="fretboard-number">13</p>
+                        <p class="fretboard-number">14</p>
+                        <p class="fretboard-number">15</p>
+                        <p class="fretboard-number">16</p>
+                        <p class="fretboard-number">17</p>
+                        <p class="fretboard-number">18</p>
+                        <p class="fretboard-number">19</p>
+                        <p class="fretboard-number">20</p>
+                        <p class="fretboard-number">21</p>
+                        <p class="fretboard-number">22</p>
+                    </div>
+                </div>
+                <div class="fretboard-bottom-ui-wrapper">
+                    <div class="fretboard-bottom-ui">
+                        <select id="root-select" class="fretboard-select">
+                        <option value="undefined" selected>Root</option>
+                        <option value="1">C</option> 
+                        <option value="2">C♯/D♭</option> 
+                        <option value="3">D</option> 
+                        <option value="4">D♯/E♭</option> 
+                        <option value="5">E</option> 
+                        <option value="6">F</option> 
+                        <option value="7">F♯/G♭</option> 
+                        <option value="8">G</option> 
+                        <option value="9">G♯/A♭</option> 
+                        <option value="10">A</option>
+                        <option value="11">A♯/B♭</option> 
+                        <option value="12">B</option>        
+                    </select>
+                        <select id="chordtype-select" class="fretboard-select">
+                        <option value="undefined" selected>Type</option>
+                        <option value="single">Single note</option>
+                        <option value="maj">maj</option>
+                        <option value="min">min</option>  
+                        <option value="dim">dim</option> 
+                        <option value="aug">aug</option> 
+                        <option value="maj7">M7</option> 
+                        <option value="min7">m7</option>
+                        <option value="7">7</option>
+                        <option value="m7b5">m7♭5</option>
+                        <option value="dim7">dim7</option>
+                        <option value="aug7">aug7</option>
+                        <option value="sus2">sus2</option>
+                        <option value="sus4">sus4</option>
+                        <option value="5">5</option>
+                    </select>
+                        <button class="fretboard-button" id="button-clear">Clear</button>
+                    </div>
+                    <div class="toggle-button-group">
+                        <button class="toggle-button toggle-button-selected" id="toggle-note">Note</button>
+                        <button class="toggle-button" id="toggle-degree">Degree</button>
+                    </div>
+                    <div class="popup-bg">
+                        <div class="popup">
+                            <h2 class="popup-title">Tuning</h2>
+                            <div class="popup-toggle-wrapper">
+                                <div class="toggle-button-group">
+                                    <button class="toggle-button toggle-button-selected" id="toggle-tuning-standard">Standard</button>
+                                    <button class="toggle-button" id="toggle-tuning-drop">Drop D</button>
+                                    <button class="toggle-button" id="toggle-tuning-custom">Custom</button>
+                                </div>
+                            </div>
+                            <div class="popup-custom-wrapper">
+                                <div class="popup-custom-string-wrapper">
+                                    <label for="string1-select">1</label>
+                                    <select id="string1-select" class="popup-custom-select" disabled>
+                                    <option value="1">C</option>
+                                    <option value="2">C♯</option>
+                                    <option value="3">D</option>
+                                    <option value="4">D♯</option>
+                                    <option value="5" selected>E</option>
+                                    <option value="6">F</option>
+                                    <option value="7">F♯</option>
+                                    <option value="8">G</option>
+                                    <option value="9">G#</option>
+                                    <option value="10">A</option>
+                                    <option value="11">A♯</option>
+                                    <option value="12">B</option>
+                                </select>
+                                </div>
+                                <div class="popup-custom-string-wrapper">
+                                    <label for="string2-select">2</label>
+                                    <select id="string2-select" class="popup-custom-select" disabled>
+                                    <option value="1">C</option>
+                                    <option value="2">C♯</option>
+                                    <option value="3">D</option>
+                                    <option value="4">D♯</option>
+                                    <option value="5">E</option>
+                                    <option value="6">F</option>
+                                    <option value="7">F♯</option>
+                                    <option value="8">G</option>
+                                    <option value="9">G#</option>
+                                    <option value="10" selected>A</option>
+                                    <option value="11">A♯</option>
+                                    <option value="12">B</option>
+                                </select>
+                                </div>
+                                <div class="popup-custom-string-wrapper">
+                                    <label for="string3-select">3</label>
+                                    <select id="string3-select" class="popup-custom-select" disabled>
+                                    <option value="1">C</option>
+                                    <option value="2">C♯</option>
+                                    <option value="3" selected>D</option>
+                                    <option value="4">D♯</option>
+                                    <option value="5">E</option>
+                                    <option value="6">F</option>
+                                    <option value="7">F♯</option>
+                                    <option value="8">G</option>
+                                    <option value="9">G#</option>
+                                    <option value="10">A</option>
+                                    <option value="11">A♯</option>
+                                    <option value="12">B</option>
+                                </select>
+                                </div>
+                                <div class="popup-custom-string-wrapper">
+                                    <label for="string4-select">4</label>
+                                    <select id="string4-select" class="popup-custom-select" disabled>
+                                    <option value="1">C</option>
+                                    <option value="2">C♯</option>
+                                    <option value="3">D</option>
+                                    <option value="4">D♯</option>
+                                    <option value="5">E</option>
+                                    <option value="6">F</option>
+                                    <option value="7">F♯</option>
+                                    <option value="8" selected>G</option>
+                                    <option value="9">G#</option>
+                                    <option value="10">A</option>
+                                    <option value="11">A♯</option>
+                                    <option value="12">B</option>
+                                </select>
+                                </div>
+                                <div class="popup-custom-string-wrapper">
+                                    <label for="string5-select">5</label>
+                                    <select id="string5-select" class="popup-custom-select" disabled>
+                                    <option value="1">C</option>
+                                    <option value="2">C♯</option>
+                                    <option value="3">D</option>
+                                    <option value="4">D♯</option>
+                                    <option value="5">E</option>
+                                    <option value="6">F</option>
+                                    <option value="7">F♯</option>
+                                    <option value="8">G</option>
+                                    <option value="9">G#</option>
+                                    <option value="10">A</option>
+                                    <option value="11">A♯</option>
+                                    <option value="12" selected>B</option>
+                                </select>
+                                </div>
+                                <div class="popup-custom-string-wrapper">
+                                    <label for="string6-select">6</label>
+                                    <select id="string6-select" class="popup-custom-select" disabled>
+                                    <option value="1">C</option>
+                                    <option value="2">C♯</option>
+                                    <option value="3">D</option>
+                                    <option value="4">D♯</option>
+                                    <option value="5" selected>E</option>
+                                    <option value="6">F</option>
+                                    <option value="7">F♯</option>
+                                    <option value="8">G</option>
+                                    <option value="9">G#</option>
+                                    <option value="10">A</option>
+                                    <option value="11">A♯</option>
+                                    <option value="12">B</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="popup-buttons-wrapper">
+                                <button class="fretboard-button fretboard-button-filled" id="popup-ok">OK</button>
+                                <button class="fretboard-button" id="popup-cancel">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,101 @@
+@font-face {
+    font-family: 'Pretendard Variable';
+    font-weight: 45 920;
+    font-style: normal;
+    font-display: swap;
+    src: local('Pretendard Variable'), url('../fonts/PretendardVariable.woff2') format('woff2-variations');
+}
+
+html {
+    font-size: 62.5%;
+    font-family: "Pretendard Variable", "Noto Sans KR", sans-serif;
+    font-weight: 400;
+    background-color: #fff;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+main {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 80rem;
+    padding: 2rem;
+    flex-basis: 65rem;
+    flex-grow: 2;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    outline: none;
+    background: none;
+    display: inline-block;
+}
+
+img {
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+strong {
+    font-weight: 600;
+}
+
+p {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    padding: 0;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+button {
+    display: block;
+    border: none;
+    border-radius: 0.5rem;
+    line-height: 1.5;
+    margin: 1rem auto;
+    padding: 0.5rem 1rem;
+    background-color: #ce63d8;
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #e98ff1;
+}
+
+input {
+    box-sizing: content-box;
+    font-size: 1.6rem;
+    margin: 0 1rem;
+    padding: 0 0.5rem;
+}
+
+a.mobile-nav-item-link {
+    color: #5f5f5f;
+    text-decoration: none;
+    background-color: transparent;
+    outline: none;
+}
+
+.noSpacing {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
