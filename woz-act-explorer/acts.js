@@ -69,7 +69,6 @@ async function analyze() {
     }
 
     for (let l = 0; l <= max_l; l++) {
-        resultsDiv[l].innerHTML = '';
         let firstCol = '';
         if (speakerSelect[0].value != 'any') {
             firstCol += `${speakerSelect[0].value}-`;
@@ -141,6 +140,12 @@ act3Toggle.addEventListener('click', () => {
 });
 
 document.getElementById('analyze-button').addEventListener('click', analyze);
+
+document.getElementById('reset-button').addEventListener('click', () => {
+    for (let l = 0; l <= 2; l++) {
+        resultsDiv[l].innerHTML = '';
+    }
+});
 
 let acts;
 async function init() {
