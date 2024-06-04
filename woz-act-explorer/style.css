@@ -1,0 +1,129 @@
+html {
+    font-family: Arial, sans-serif;
+    font-size: 62.5%;
+}
+
+.page-wrapper {
+    width: 131rem;
+    margin: 3rem auto;
+}
+
+.input-wrapper {
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.results-wrapper {
+    display: flex;
+}
+
+.col {
+    width: 30rem;
+    margin: 0 1rem;
+}
+
+.results-wrapper .col {
+    height: 40rem;
+    border-radius: 0.5rem;
+    outline: 1px solid #ccc;
+    overflow-y: scroll;
+}
+
+.col-between {
+    width: 2rem;
+    font-size: 1.6rem;
+    text-align: center;
+    text-weight: bold;
+}
+
+h1 {
+    font-size: 2.4rem;
+    margin-bottom: 1.8rem;
+    text-align: center;
+}
+
+.col-name {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+input {
+    display: inline-block;
+    margin: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.select-wrapper {
+    display: flex;
+}
+
+select {
+    display: inline-block;
+    font-size: 1.6rem;
+    padding: 0.6rem;
+}
+
+.act-select {
+    flex: 1 0 auto;
+    margin-left: 0.7rem;
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    display: inline-block;
+    font-size: 1.8rem;
+    padding: 0.5rem 3rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+button:last-child {
+    margin-left: 1.5rem;
+    padding: 0.5rem 2rem;
+    background-color: #d0d0d0;
+    color: black;
+}
+
+button:hover {
+    background-color: #149dcf;
+}
+
+button:last-child:hover {
+    background-color: #b9b9b9;
+}
+
+.first-col p{
+    font-size: 1.6rem;
+    margin: 0.7rem;
+    text-align: center;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.6rem;
+    padding: 0.7rem;
+}
+
+.highlight {
+    background-color: yellow;
+}
+
+.footer {
+    margin-top: 2rem;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.footer a {
+    color: #616161;
+}

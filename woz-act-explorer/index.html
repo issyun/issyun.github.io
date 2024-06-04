@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Web Page</title>
+    <script src="acts.js" defer></script>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <h1>Wizard of Oz Dialogue Act Explorer</h1>
+        <div class="input-wrapper">
+            <div class="col">
+                <div class="col-name">
+                    Act 1
+                </div>
+                <div class="select-wrapper">
+                    <select id="speaker1">
+                        <option value="any">Any</option>
+                        <option value="U">User</option>
+                        <option value="A">Agent</option>
+                    </select>
+                    <select id="act1" class="act-select">
+                        <option value="apologize">apologize</option>
+                        <option value="close">close</option>
+                        <option value="closeappreciate">closeappreciate</option>
+                        <option value="confimrequest">confimrequest</option>
+                        <option value="confirm">confirm</option>
+                        <option value="confirmrequest">confirmrequest</option>
+                        <option value="confirmsummary">confirmsummary</option>
+                        <option value="disaffirm">disaffirm</option>
+                        <option value="grant">grant</option>
+                        <option value="grantsummary">grantsummary</option>
+                        <option value="inform">inform</option>
+                        <option value="informbecause">informbecause</option>
+                        <option value="informcompare">informcompare</option>
+                        <option value="informcondition">informcondition</option>
+                        <option value="informevaluate">informevaluate</option>
+                        <option value="informintent">informintent</option>
+                        <option value="informnegative">informnegative</option>
+                        <option value="informpossible">informpossible</option>
+                        <option value="informpreference">informpreference</option>
+                        <option value="informrecommend">informrecommend</option>
+                        <option value="informschedule">informschedule</option>
+                        <option value="informstatus">informstatus</option>
+                        <option value="informsummary">informsummary</option>
+                        <option value="inquire">inquire</option>
+                        <option value="inquirebecause">inquirebecause</option>
+                        <option value="inquirechange">inquirechange</option>
+                        <option value="inquirecompare">inquirecompare</option>
+                        <option value="inquirecondition">inquirecondition</option>
+                        <option value="inquireelse">inquireelse</option>
+                        <option value="inquireevaluate">inquireevaluate</option>
+                        <option value="inquireintent">inquireintent</option>
+                        <option value="inquireparaphrase">inquireparaphrase</option>
+                        <option value="inquirepossible">inquirepossible</option>
+                        <option value="inquirepreference">inquirepreference</option>
+                        <option value="inquirerecommend">inquirerecommend</option>
+                        <option value="inquirerepeat">inquirerepeat</option>
+                        <option value="inquirereserve">inquirereserve</option>
+                        <option value="inquireschedule">inquireschedule</option>
+                        <option value="inquiresearch">inquiresearch</option>
+                        <option value="inquireselect">inquireselect</option>
+                        <option value="no">no</option>
+                        <option value="offer">offer</option>
+                        <option value="offerchange">offerchange</option>
+                        <option value="offerinform">offerinform</option>
+                        <option value="offernext">offernext</option>
+                        <option value="offerregister">offerregister</option>
+                        <option value="offerreserve">offerreserve</option>
+                        <option value="offersearch">offersearch</option>
+                        <option value="ok">ok</option>
+                        <option value="okappreciate">okappreciate</option>
+                        <option value="opengreet">opengreet</option>
+                        <option value="openinquire">openinquire</option>
+                        <option value="request">request</option>
+                        <option value="requestchange">requestchange</option>
+                        <option value="requestconfirm">requestconfirm</option>
+                        <option value="requestdelete">requestdelete</option>
+                        <option value="requesthold">requesthold</option>
+                        <option value="requestregister">requestregister</option>
+                        <option value="requestreserve">requestreserve</option>
+                        <option value="requestselect">requestselect</option>
+                        <option value="requestsend">requestsend</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-between"></div>
+
+            <div class="col">
+                <div class="col-name">
+                    <input type="checkbox" id="toggle-act-2">
+                    <label for="toggle-act-2">Act 2</label>
+                </div>
+                <div class="select-wrapper">
+                    <select id="speaker2" disabled>
+                        <option value="any">Any</option>
+                        <option value="U">User</option>
+                        <option value="A">Agent</option>
+                    </select>
+                    <select id="act2" class="act-select" disabled>
+                        <option value="apologize">apologize</option>
+                        <option value="close">close</option>
+                        <option value="closeappreciate">closeappreciate</option>
+                        <option value="confimrequest">confimrequest</option>
+                        <option value="confirm">confirm</option>
+                        <option value="confirmrequest">confirmrequest</option>
+                        <option value="confirmsummary">confirmsummary</option>
+                        <option value="disaffirm">disaffirm</option>
+                        <option value="grant">grant</option>
+                        <option value="grantsummary">grantsummary</option>
+                        <option value="inform">inform</option>
+                        <option value="informbecause">informbecause</option>
+                        <option value="informcompare">informcompare</option>
+                        <option value="informcondition">informcondition</option>
+                        <option value="informevaluate">informevaluate</option>
+                        <option value="informintent">informintent</option>
+                        <option value="informnegative">informnegative</option>
+                        <option value="informpossible">informpossible</option>
+                        <option value="informpreference">informpreference</option>
+                        <option value="informrecommend">informrecommend</option>
+                        <option value="informschedule">informschedule</option>
+                        <option value="informstatus">informstatus</option>
+                        <option value="informsummary">informsummary</option>
+                        <option value="inquire">inquire</option>
+                        <option value="inquirebecause">inquirebecause</option>
+                        <option value="inquirechange">inquirechange</option>
+                        <option value="inquirecompare">inquirecompare</option>
+                        <option value="inquirecondition">inquirecondition</option>
+                        <option value="inquireelse">inquireelse</option>
+                        <option value="inquireevaluate">inquireevaluate</option>
+                        <option value="inquireintent">inquireintent</option>
+                        <option value="inquireparaphrase">inquireparaphrase</option>
+                        <option value="inquirepossible">inquirepossible</option>
+                        <option value="inquirepreference">inquirepreference</option>
+                        <option value="inquirerecommend">inquirerecommend</option>
+                        <option value="inquirerepeat">inquirerepeat</option>
+                        <option value="inquirereserve">inquirereserve</option>
+                        <option value="inquireschedule">inquireschedule</option>
+                        <option value="inquiresearch">inquiresearch</option>
+                        <option value="inquireselect">inquireselect</option>
+                        <option value="no">no</option>
+                        <option value="offer">offer</option>
+                        <option value="offerchange">offerchange</option>
+                        <option value="offerinform">offerinform</option>
+                        <option value="offernext">offernext</option>
+                        <option value="offerregister">offerregister</option>
+                        <option value="offerreserve">offerreserve</option>
+                        <option value="offersearch">offersearch</option>
+                        <option value="ok">ok</option>
+                        <option value="okappreciate">okappreciate</option>
+                        <option value="opengreet">opengreet</option>
+                        <option value="openinquire">openinquire</option>
+                        <option value="request">request</option>
+                        <option value="requestchange">requestchange</option>
+                        <option value="requestconfirm">requestconfirm</option>
+                        <option value="requestdelete">requestdelete</option>
+                        <option value="requesthold">requesthold</option>
+                        <option value="requestregister">requestregister</option>
+                        <option value="requestreserve">requestreserve</option>
+                        <option value="requestselect">requestselect</option>
+                        <option value="requestsend">requestsend</option>
+                    </select>
+                </div>   
+            </div>
+
+            <div class="col-between"></div>
+
+            <div class="col">
+                <div class="col-name">
+                    <input type="checkbox" id="toggle-act-3">
+                    <label for="toggle-act-3">Act 3</label>
+                </div>
+                <div class="select-wrapper">
+                    <select id="speaker3" disabled>
+                        <option value="any">Any</option>
+                        <option value="U">User</option>
+                        <option value="A">Agent</option>
+                    </select>
+                    <select id="act3" class="act-select" disabled>
+                        <option value="apologize">apologize</option>
+                        <option value="close">close</option>
+                        <option value="closeappreciate">closeappreciate</option>
+                        <option value="confimrequest">confimrequest</option>
+                        <option value="confirm">confirm</option>
+                        <option value="confirmrequest">confirmrequest</option>
+                        <option value="confirmsummary">confirmsummary</option>
+                        <option value="disaffirm">disaffirm</option>
+                        <option value="grant">grant</option>
+                        <option value="grantsummary">grantsummary</option>
+                        <option value="inform">inform</option>
+                        <option value="informbecause">informbecause</option>
+                        <option value="informcompare">informcompare</option>
+                        <option value="informcondition">informcondition</option>
+                        <option value="informevaluate">informevaluate</option>
+                        <option value="informintent">informintent</option>
+                        <option value="informnegative">informnegative</option>
+                        <option value="informpossible">informpossible</option>
+                        <option value="informpreference">informpreference</option>
+                        <option value="informrecommend">informrecommend</option>
+                        <option value="informschedule">informschedule</option>
+                        <option value="informstatus">informstatus</option>
+                        <option value="informsummary">informsummary</option>
+                        <option value="inquire">inquire</option>
+                        <option value="inquirebecause">inquirebecause</option>
+                        <option value="inquirechange">inquirechange</option>
+                        <option value="inquirecompare">inquirecompare</option>
+                        <option value="inquirecondition">inquirecondition</option>
+                        <option value="inquireelse">inquireelse</option>
+                        <option value="inquireevaluate">inquireevaluate</option>
+                        <option value="inquireintent">inquireintent</option>
+                        <option value="inquireparaphrase">inquireparaphrase</option>
+                        <option value="inquirepossible">inquirepossible</option>
+                        <option value="inquirepreference">inquirepreference</option>
+                        <option value="inquirerecommend">inquirerecommend</option>
+                        <option value="inquirerepeat">inquirerepeat</option>
+                        <option value="inquirereserve">inquirereserve</option>
+                        <option value="inquireschedule">inquireschedule</option>
+                        <option value="inquiresearch">inquiresearch</option>
+                        <option value="inquireselect">inquireselect</option>
+                        <option value="no">no</option>
+                        <option value="offer">offer</option>
+                        <option value="offerchange">offerchange</option>
+                        <option value="offerinform">offerinform</option>
+                        <option value="offernext">offernext</option>
+                        <option value="offerregister">offerregister</option>
+                        <option value="offerreserve">offerreserve</option>
+                        <option value="offersearch">offersearch</option>
+                        <option value="ok">ok</option>
+                        <option value="okappreciate">okappreciate</option>
+                        <option value="opengreet">opengreet</option>
+                        <option value="openinquire">openinquire</option>
+                        <option value="request">request</option>
+                        <option value="requestchange">requestchange</option>
+                        <option value="requestconfirm">requestconfirm</option>
+                        <option value="requestdelete">requestdelete</option>
+                        <option value="requesthold">requesthold</option>
+                        <option value="requestregister">requestregister</option>
+                        <option value="requestreserve">requestreserve</option>
+                        <option value="requestselect">requestselect</option>
+                        <option value="requestsend">requestsend</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-between"></div>
+
+            <div class="col button-wrapper">
+                <button id="analyze-button">Analyze</button>
+                <button id="reset-button">Reset</button>
+            </div>
+        </div>
+        <div class="results-wrapper">
+            <div class="col first-col">
+                <p id="results-first-col"></p>
+            </div>
+            <div class="col-between">
+                →
+            </div>
+            <div class="col">
+                <div id="results1"></div>
+            </div>
+            <div class="col-between">
+                →
+            </div>
+            <div class="col">
+                <div id="results2"></div>
+            </div>
+            <div class="col-between">
+                →
+            </div>
+            <div class="col">
+                <div id="results3"></div>
+            </div>
+        </div>
+        <div class="footer">
+            <a href="./acts-24-06-04.txt" target="_blank">
+                Show raw data
+            </a>
+        </div>
+    </div>
+</body>
+</html>
