@@ -19,12 +19,12 @@ function rCheckMatch(acts, i, j, queries, results, l, max_l) {
 
 function getQuery(l) {
     let query = [];
-    if (speakerSelect[l].value == 'any') {
-        query.push(`U-${actSelect[l].value}`);
-        query.push(`A-${actSelect[l].value}`);
+    if (speakerSelects[l].value == 'any') {
+        query.push(`U-${actSelects[l].value}`);
+        query.push(`A-${actSelects[l].value}`);
     }
     else {
-        query.push(`${speakerSelect[l].value}-${actSelect[l].value}`);
+        query.push(`${speakerSelects[l].value}-${actSelects[l].value}`);
     }
     return query;
 }
@@ -39,9 +39,9 @@ function counter(arr) {
     return [count, sum];
 }
 
-async function analyze() {
+function analyze() {
     for (let l = 0; l <= 2; l++) {
-        resultsDiv[l].innerHTML = '';
+        resultsDivs[l].innerHTML = '';
     }
 
     let queries = [];
@@ -70,10 +70,10 @@ async function analyze() {
 
     for (let l = 0; l <= max_l; l++) {
         let firstCol = '';
-        if (speakerSelect[0].value != 'any') {
-            firstCol += `${speakerSelect[0].value}-`;
+        if (speakerSelects[0].value != 'any') {
+            firstCol += `${speakerSelects[0].value}-`;
         }
-        firstCol += `${actSelect[0].value}`;
+        firstCol += `${actSelects[0].value}`;
         document.getElementById('results-first-col').textContent = firstCol;
 
         counts[l].forEach(item => {
@@ -83,6 +83,7 @@ async function analyze() {
                 div.classList.add('highlight');
             }
             const p1 = document.createElement('p');
+            p1.dataset.layer = l;
             p1.textContent = item[0];
             div.appendChild(p1);
 
@@ -90,60 +91,99 @@ async function analyze() {
             p2.textContent = `${item[1]} (${item[2].toFixed(2)}%)`;
             div.appendChild(p2);
 
-            resultsDiv[l].appendChild(div);
+            if (l < 2) {
+                p1.addEventListener('click', (e) => {
+                    targetLayer = parseInt(e.target.dataset.layer);
+                    if (targetLayer >= max_l) {
+                        actToggles[targetLayer].checked = true;
+                        speakerSelects[targetLayer + 1].disabled = false;
+                        actSelects[targetLayer + 1].disabled = false;
+                        max_l = targetLayer + 1;
+                    }
+                    let [speaker, act] = e.target.textContent.split('-');
+                    speakerSelects[targetLayer + 1].value = speaker;
+                    actSelects[targetLayer + 1].value = act;
+                    analyze();
+                });
+            }
+
+            resultsDivs[l].appendChild(div);
         });
     }
 }
 
-const speakerSelect = [
+const speakerSelects = [
     document.getElementById('speaker1'),
     document.getElementById('speaker2'),
     document.getElementById('speaker3')
 ];
 
-const actSelect = [
+speakerSelects.forEach(select => {
+    select.addEventListener('change', () => {
+        analyze();
+    });
+});
+
+const actSelects = [
     document.getElementById('act1'),
     document.getElementById('act2'),
     document.getElementById('act3')
 ];
 
-const resultsDiv = [
+actSelects.forEach(select => {
+    select.addEventListener('change', () => {
+        analyze();
+    });
+});
+
+const resultsDivs = [
     document.getElementById('results1'),
     document.getElementById('results2'),
-    document.getElementById('results3')
+    document.getElementById('results3'),
+    document.getElementById('results-first-col')
 ];
 
 let max_l = 0;
-const act2Toggle = document.getElementById('toggle-act-2');
-const act3Toggle = document.getElementById('toggle-act-3');
+const actToggles = [
+    document.getElementById('toggle-act-2'),
+    document.getElementById('toggle-act-3')
+];
 
-act2Toggle.addEventListener('click', () => {
-    speakerSelect[1].disabled = !act2Toggle.checked;
-    actSelect[1].disabled = !act2Toggle.checked;
-    if (!act2Toggle.checked && act3Toggle.checked) {
-        act3Toggle.checked = false;
-        speakerSelect[2].disabled = !act2Toggle.checked;
-        actSelect[2].disabled = !act2Toggle.checked;
+actToggles[0].addEventListener('click', () => {
+    speakerSelects[1].disabled = !actToggles[0].checked;
+    actSelects[1].disabled = !actToggles[0].checked;
+    if (!actToggles[0].checked && actToggles[1].checked) {
+        actToggles[1].checked = false;
+        speakerSelects[2].disabled = !actToggles[0].checked;
+        actSelects[2].disabled = !actToggles[0].checked;
     }
-    max_l = act2Toggle.checked ? 1 : 0;
+    max_l = actToggles[0].checked ? 1 : 0;
 });
 
-act3Toggle.addEventListener('click', () => {
-    speakerSelect[2].disabled = !act3Toggle.checked;
-    actSelect[2].disabled = !act3Toggle.checked;
-    if (act3Toggle.checked && !act2Toggle.checked) {
-        act2Toggle.checked = true;
-        speakerSelect[1].disabled = !act2Toggle.checked;
-        actSelect[1].disabled = !act2Toggle.checked;
+actToggles[1].addEventListener('click', () => {
+    speakerSelects[2].disabled = !actToggles[1].checked;
+    actSelects[2].disabled = !actToggles[1].checked;
+    if (actToggles[1].checked && !actToggles[0].checked) {
+        actToggles[0].checked = true;
+        speakerSelects[1].disabled = !actToggles[0].checked;
+        actSelects[1].disabled = !actToggles[0].checked;
     }
-    max_l = act3Toggle.checked ? 2 : 1;
+    max_l = actToggles[1].checked ? 2 : 1;
 });
-
-document.getElementById('analyze-button').addEventListener('click', analyze);
 
 document.getElementById('reset-button').addEventListener('click', () => {
-    for (let l = 0; l <= 2; l++) {
-        resultsDiv[l].innerHTML = '';
+    speakerSelects[0].value = 'any';
+    actSelects[0].value = '';
+    for (let i = 0; i <= 3; i++) {
+        resultsDivs[i].innerHTML = '';
+        if (i > 0 && i <= 2) {
+            speakerSelects[i].disabled = true;
+            speakerSelects[i].value = 'any';
+            actSelects[i].disabled = true;
+            actSelects[i].value = 'apologize';
+            actToggles[i - 1].checked = false;
+        }
+        max_l = 0;
     }
 });
 

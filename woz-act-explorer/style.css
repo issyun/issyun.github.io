@@ -33,7 +33,7 @@ html {
     width: 2rem;
     font-size: 1.6rem;
     text-align: center;
-    text-weight: bold;
+    font-weight: bold;
 }
 
 h1 {
@@ -72,7 +72,7 @@ select {
 
 .button-wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: right;
 }
 
 button {
@@ -112,6 +112,22 @@ button:last-child:hover {
     justify-content: space-between;
     font-size: 1.6rem;
     padding: 0.7rem;
+}
+
+.result-item p:first-child {
+    cursor: pointer;
+}
+
+.result-item p:first-child:hover {
+    text-decoration: underline;
+}
+
+.col:last-child div p {
+    cursor: default;
+}
+
+.col:last-child div p:hover {
+    text-decoration: none;
 }
 
 .highlight {
