@@ -101,12 +101,6 @@ button:last-child:hover {
     background-color: #b9b9b9;
 }
 
-.first-col p{
-    font-size: 1.6rem;
-    margin: 0.7rem;
-    text-align: center;
-}
-
 .result-item {
     display: flex;
     justify-content: space-between;

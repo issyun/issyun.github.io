@@ -5,7 +5,15 @@ async function loadData() {
     acts.forEach((line, i) => {
         acts[i] = line.split(' ');
     });
-    return acts;
+    const actsIsolated = acts.map(line => {
+        lineIsolated = line.map(word => {
+            return word.split('-')[1];
+        });
+        return lineIsolated;
+    });
+    topLevelCount = counter(acts.flat());
+    topLevelIsolatedCount = counter(actsIsolated.flat());
+    return [acts, topLevelCount, topLevelIsolatedCount];
 }
 
 function rCheckMatch(acts, i, j, queries, results, l, max_l) {
@@ -36,13 +44,36 @@ function counter(arr) {
         count[item] = (count[item] || 0) + 1;
         sum++;
     });
-    return [count, sum];
+    count = Object.entries(count);
+    count.sort((a, b) => b[1] - a[1]);
+    count.forEach(item => {
+        item.push(item[1] / sum * 100);
+    });
+    return count;
+}
+
+function getResultItem(l, act, count, percentage, highlight) {
+    const div = document.createElement('div');
+    div.classList.add('result-item');
+    if (highlight) {
+        div.classList.add('highlight');
+    }
+    const p1 = document.createElement('p');
+    p1.dataset.layer = l;
+    p1.textContent = act;
+    div.appendChild(p1);
+
+    const p2 = document.createElement('p');
+    p2.textContent = `${count} (${percentage.toFixed(2)}%)`;
+    div.appendChild(p2);
+
+    return [div, p1];
 }
 
 function analyze() {
-    for (let l = 0; l <= 2; l++) {
-        resultsDivs[l].innerHTML = '';
-    }
+    resultsDivs.forEach(div => {
+        div.innerHTML = '';
+    });
 
     let queries = [];
     let results = [];
@@ -59,38 +90,59 @@ function analyze() {
 
     let counts = [];
     for (let l = 0; l <= max_l; l++) {
-        let [count, sum] = counter(results[l]);
-        count = Object.entries(count);
-        count.sort((a, b) => b[1] - a[1]);
-        count.forEach(item => {
-            item.push(item[1] / sum * 100);
-        });
-        counts.push(count);
+        counts.push(counter(results[l]));
     }
 
-    for (let l = 0; l <= max_l; l++) {
-        let firstCol = '';
-        if (speakerSelects[0].value != 'any') {
-            firstCol += `${speakerSelects[0].value}-`;
+    let tc, tcSelected;
+    if (speakerSelects[0].value == 'any') {
+        tc = topLevelIsolatedCount;
+        tcSelected = tc.filter(item => queries[0].includes(`U-${item[0]}`));
+    }
+    else {
+        tc = topLevelCount;
+        tcSelected = tc.filter(item => queries[0].includes(item[0]));
+    }
+
+    tcSelected.forEach(item => {
+        let [div, p1] = getResultItem(0, item[0], item[1], item[2], true);
+        if (speakerSelects[0].value == 'any') {
+            p1.addEventListener('click', (e) => {
+                actSelects[0].value = e.target.textContent;
+                analyze();
+            });
+        } else {
+            p1.addEventListener('click', (e) => {
+                speakerSelects[0].value = e.target.textContent.split('-')[0];
+                actSelects[0].value = e.target.textContent.split('-')[1];
+                analyze();
+            });
         }
-        firstCol += `${actSelects[0].value}`;
-        document.getElementById('results-first-col').textContent = firstCol;
+        resultsDivs[resultsDivs.length - 1].appendChild(div);
+    });
 
-        counts[l].forEach(item => {
-            const div = document.createElement('div');
-            div.classList.add('result-item');
-            if (l < max_l && queries[l+1].includes(item[0])) {
-                div.classList.add('highlight');
+    tc.forEach(item => {
+        if (!tcSelected.includes(item)) {
+            let [div, p1] = getResultItem(0, item[0], item[1], item[2], false);
+            if (speakerSelects[0].value == 'any') {
+                p1.addEventListener('click', (e) => {
+                    actSelects[0].value = e.target.textContent;
+                    analyze();
+                });
+            } else {
+                p1.addEventListener('click', (e) => {
+                    speakerSelects[0].value = e.target.textContent.split('-')[0];
+                    actSelects[0].value = e.target.textContent.split('-')[1];
+                    analyze();
+                });
             }
-            const p1 = document.createElement('p');
-            p1.dataset.layer = l;
-            p1.textContent = item[0];
-            div.appendChild(p1);
+            resultsDivs[resultsDivs.length - 1].appendChild(div);
+        }
+    });
 
-            const p2 = document.createElement('p');
-            p2.textContent = `${item[1]} (${item[2].toFixed(2)}%)`;
-            div.appendChild(p2);
-
+    for (let l = 0; l <= max_l; l++) {
+        counts[l].forEach(item => {
+            let highlight = l < max_l && queries[l+1].includes(item[0]);
+            let [div, p1] = getResultItem(l, item[0], item[1], item[2], highlight);
             if (l < 2) {
                 p1.addEventListener('click', (e) => {
                     targetLayer = parseInt(e.target.dataset.layer);
@@ -187,9 +239,9 @@ document.getElementById('reset-button').addEventListener('click', () => {
     }
 });
 
-let acts;
+let acts, topLevelCount, topLevelIsolatedCount;
 async function init() {
-    acts = await loadData();
+    [acts, topLevelCount, topLevelIsolatedCount] = await loadData();
 }
 
 init();
