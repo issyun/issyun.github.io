@@ -1,5 +1,5 @@
 async function loadData() {
-    const res = await fetch('./acts-24-06-04.txt');
+    const res = await fetch('./acts-24-11-14.txt');
     const text = await res.text();
     let acts = text.split('\n');
     acts.forEach((line, i) => {
