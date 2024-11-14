@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Leitmotif Boundary Regression</title>
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="page-wrapper">
+            <div class="content-wrapper">
+                <header>
+                    <h1>Boundary Regression for Leitmotif Detection in Music Audio</h1>
+                    <p class="authors">Sihun Lee, Dasaem Jeong</p>
+                    <p class="affiliation">Sogang University</p>
+                    <p class="conference">
+                        Presented as a <em>Late-Breaking Demo</em> at the 
+                        <a href="https://ismir2024.ismir.net" target="_blank">2024 International Society for Music Information Retrieval Conference</a>
+                    </p>
+                </header>
+                <div class="video-wrapper">
+                    <iframe id="video" src="https://www.youtube.com/embed/75cNbrIj5CI?si=1SrpQt1eb8ML9OpQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="links">
+                    <a href="https://ismir2024program.ismir.net/lbd_506.html" target="_blank"><span>Paper</span></a>
+                    <a href="https://github.com/MALerLab/leitmotif-boundary-regression" target="_blank"><span>Code</span></a>
+                </div>
+                <div class="abstract">
+                    <p>
+                        Leitmotifs are musical phrases that are reprised in various forms throughout a piece. Due to diverse variations and instrumentation, detecting the occurrence of leitmotifs from audio recordings is a highly challenging task. Leitmotif detection may be handled as a subcategory of audio event detection, where leitmotif activity is predicted at the frame level. However, as leitmotifs embody distinct, coherent musical structures, a more holistic approach akin to bounding box regression in visual object detection can be helpful. This method captures the entirety of a motif rather than fragmenting it into individual frames, thereby preserving its musical integrity and producing more useful predictions. We present our experimental results on tackling leitmotif detection as a boundary regression task.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
