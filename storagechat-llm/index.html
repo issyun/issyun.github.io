@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>StorageChat LLM 테스트</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="main.js" defer></script>
+    </head>
+    <body>
+        <div class="page-wrapper">
+            <h1>StorageChat LLM 대화 테스트</h1>
+
+            <div id="session-wrapper">
+                <p>현재 세션: <span id="session-id"></span></p>
+                <button id="reset-session">초기화</button>
+            </div>
+
+            <div id="chat-wrapper"></div>
+
+            <div id="input-wrapper">
+                <div class="api-type-wrapper">
+                    <label for="api-type">대화 타입</label>
+                    <select name="api-type" id="api-type">
+                        <option value="general" default>일반 대화</option>
+                        <option value="mngno">관리번호 지정</option>
+                    </select>
+                    
+                    <label for="mngno">관리번호</label>
+                    <input type="number" id="mngno" name="mngno" disabled>
+                </div>
+
+                <div id="is-youth-wrapper">
+                    <input type="checkbox" id="is-youth" name="is-youth">
+                    <label for="is-youth">질문자가 어린이임</label>
+                </div>
+
+                <div id="chat-input-wrapper">
+                    <input type="text" id="chat-input" placeholder="메시지를 입력하세요">
+                    <button id="send">전송</button>
+                </div>
+            </div>
+
+        </div>
+    </body>
+
+</html>

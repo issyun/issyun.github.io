@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Pretendard Variable', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 1.6rem;
+    background-color: #f8f9fa;
+}
+
+input {
+    padding: 1rem;
+    border: 1px solid rgb(200, 203, 205);
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+}
+
+.page-wrapper {
+    width: 100%;
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fff;
+}
+
+#session-wrapper {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+#reset-session {
+    padding: 0.8rem;
+    background-color:rgb(212, 212, 212);
+    color: black;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1.6rem;
+    margin-left: 1rem;
+}
+
+#chat-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    min-height: 40rem;
+    max-height: 60rem;
+    overflow-y: scroll;
+    padding: 1rem;
+    border: 1px solid rgb(200, 203, 205);
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+#api-type-wrapper {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#api-type {
+    font-size: 1.6rem;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    border: 1px solid rgb(200, 203, 205);
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    margin-right: 2rem;
+}
+
+#is-youth-wrapper {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#chat-input-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#chat-input {
+    flex: 1 0 auto;
+}
+
+#send {
+    flex: 0 0 auto;
+    padding: 1rem 1.5rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1.6rem;
+    margin-left: 1rem;
+}
+
+.chat {
+    max-width: 60rem;
+    padding: 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.chat-user {
+    background-color: #007bff;
+    color: #fff;
+    align-self: flex-end;
+    text-align: right;
+}
+
+.chat-agent {
+    background-color: #f8f9fa;
+    color: black;
+    align-self: flex-start;
+    text-align: left;
+}
