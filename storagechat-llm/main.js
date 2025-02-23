@@ -11,9 +11,14 @@ const baseUrl = "http://atfuturelab.sogang.ac.kr:40000";
 
 let sessionId = null;
 
+// TODO add support for unsafe modules
+
 async function sendChat() {
     const question = chatInputField.value;
     if (!question) return;
+
+    chatInputField.disabled = true;
+    sendButton.disabled = true;
 
     chatInputField.value = "";
     const chat = document.createElement("div");
@@ -69,6 +74,9 @@ async function sendChat() {
     resBlock.classList.add("chat-agent");
     resBlock.textContent = answer;
     chatList.appendChild(resBlock);
+
+    chatInputField.disabled = false;
+    sendButton.disabled = false;
 }
 
 async function resetSession() {
@@ -90,6 +98,7 @@ async function resetSession() {
 
     sessionId = null;
     sessionIdDisplay.textContent = "";
+    chatList.innerHTML = "";
 }
 
 sendButton.addEventListener("click", sendChat);

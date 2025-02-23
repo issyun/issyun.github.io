@@ -78,6 +78,10 @@ input {
     margin-right: 2rem;
 }
 
+#mngno {
+    margin-left: 1rem;
+}
+
 #is-youth-wrapper {
     display: flex;
     justify-content: left;
